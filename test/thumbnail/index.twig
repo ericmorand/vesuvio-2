@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ demo.title }}</title>
+    <link rel="stylesheet" href="../css/index.css">
+</head>
+<body class="{{ demo.class }}">
+<div>
+    <h1 class="{{ demo.class }}--title">
+        {{ demo.title }}
+    </h1>
+    {% for fixture in fixtures %}
+        <div class="{{ demo.class }}--fixture">
+            <h2>{{ fixture.title }}</h2>
+            <div id="app">
+                {% for item in fixture.items %}
+                    <Foo href="{{ item.href }}" label="{{ item.label }}" preview="{{ item.preview }}"></Foo>
+                {% endfor %}
+            </div>
+        </div>
+    {% endfor %}
+</div>
+<script src="../js/index.js"></script>
+</body>
+</html>

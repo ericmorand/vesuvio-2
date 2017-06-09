@@ -1,0 +1,44 @@
+@import "../font/mixins";
+@import "../color/variables";
+
+.thumbnail {
+  @include PrimaryFont;
+  border: solid 1px #ccc;
+  box-shadow: 0 0.2em 0.1em #ccc;
+  position: relative;
+  color: $color-primary;
+
+  a {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+  }
+
+  .preview {
+    border-bottom: solid 1px #ccc;
+  }
+
+  .title {
+    padding: 1.0em;
+    position: relative;
+
+    .icon {
+      width: 3.0em;
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+    }
+
+    .label {
+margin-left: 3.0em;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden;
+      font-weight: bold;
+    }
+  }
+}
